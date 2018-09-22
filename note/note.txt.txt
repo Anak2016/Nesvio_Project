@@ -1,0 +1,10 @@
+
+
+Other
+:in brower.json, jqury is not specify (its ~2.2 in the tutorial)
+
+external dependency
+-node
+-npm
+-composer
+-git for window10: https://gitforwindows.org/

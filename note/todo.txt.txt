@@ -1,0 +1,6 @@
+Todo
+:set up localhost
+:change Server name
+:seperate branch to dev, test, production
+
+============================================================

@@ -1,0 +1,10 @@
+{
+  "author": "Anak Wannaphaschaiyong and Panupong Wongsupa",
+  "description": "Nesvio store",
+  "private": true,
+  "despendencies": {},
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "laravel-elixir": "^6.0.0-18"
+  }
+}
