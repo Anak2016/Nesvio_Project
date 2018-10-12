@@ -1,0 +1,82 @@
+QUESTION
+What is mixed in php?
+Ans 	>mixed is not a Type. 
+	>it is only a pseudo type: meaning that any Type might be passed to or reutrned from  Method including mixed of other var.
+
+What is namespace?
+Ans 	In the PHP world, namespaces are designed to solve two problems that authors of libraries and applications encounter when 
+	creating re-usable code elements such as classes or functions
+	
+	1.Name collisions between code you create, and internal PHP classes/functions/constants or third-party classes/functions/constants.
+	2.Ability to alias (or shorten) Extra_Long_Names designed to alleviate the first problem, improving readability of source code.
+
+Is PHPMailer secure
+Ans 	>PHPMailer did a good job ensuring things were escaped and handling eader injection.
+	>PHPMailer (like any techincal library) can be abused to send all kinds of nasty phishing, spam and mulware, and the SMTP class 
+	can be used to try to confused the hell out of the mail servers, though it will try its hardest to ensure it does so with the utmost
+	respect for the RFCs 
+		note: this means that followed RFC series.
+		note: RFC series contains technical and organizational documents about the Internet, including the specifications and policy documents.
+
+What is SMTP?
+Ans 	>Simple Mail Transfor Protocol(STMP) is an Internet standard for electornice mail(email) transmission.
+
+What is TLS?
+Ans	>is a successor of SSL. 
+	>it provides secure communications on the Internet for such thigns as e-mail, Internet faxing and other data transfers.
+
+Pros and Cons of Sending Email as HTML vs Plain text?
+Ans
+
+@yield vs @include?
+Ans 	The main difference between @yeild and @include is 
+		>@include defines view to inject into parent
+		>@yield defines section to be injected
+		>@yield works only if your view @extends the parent view.
+====================================================================================
+VOCAB
+
+FUNCTION 
+var_dump()
+	>displays strucutre info about one or more expression/arguments that includes its type and value.
+
+in_array(element in array, array name)
+	>return true of element exist within array.
+
+is_callable()
+	>Verfity that the contents of a variable can be called as a function
+	(aka input vars is a function)
+
+extract()
+	>Import vars into the currect symbol table from an array.
+		note: it means that elements withtin array will become variable that have its own name and its own value.
+
+ob_start()
+	>Turn on output buffering
+		note: while output buffering is active no output is sent from the script (other than headers), instead the output is stored
+		an internal buffer
+
+ob_get_contents()
+	>returns the contents of the output buffer without clearing it.
+
+ob_end_clean()
+	>clean(erase) the output buffer and turn off output buffering.
+include()
+	>similar to require
+	>the difference is that it emits a warning while require emits a fatal error.
+
+header()
+	>used to send a raw HTTP header
+		note: header() must be called before any actual output is sent to the page.
+		note: use case: eg redirect page, caching directives, download dialog.
+compact()
+	>Create array containing variables and their values
+====================================================================================
+NOTE
+
+set router with AltoRouter( installed by composer)
+----
+$router = new AltoRouter
+
+$router->map('GET', '/about', ''. 'about us')
+====================================================================================

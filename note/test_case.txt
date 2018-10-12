@@ -1,0 +1,21 @@
+What to check
+
+NAME OF FILE TO BE CHECKED
+:app/classes
+	>controller/admin/productCategoryController
+	>routing/route
+	>classes/Session
+:resources/assets
+	>js/admin/delete.js
+	>js/admine/update.js
+	>js/init.js
+	>Sass/_global.scss
+	>Sass/app.scss
+:resources/views
+	>admin/products/categories.blade
+	>includes/delete-modal.blade
+	>includes/message.blade.php
+
+TEST CASE
+check Edit:
+	>displayed alert is accurate

@@ -1,0 +1,20 @@
+Action:add subCategory by click submit 
+
+categories.blade.php click activate js
+-> create.js sends ajax request with Post
+-> admin_routes.php select routes
+-> SubCategoryController::store send JSON-encode('success')
+
+=============================================================
+problem: post wrong field name/id to be verify
+
+product name = Product's price
+product price = N/A
+product category = category_id
+product subcategory = sub_category_id 
+
+
+possible cause: 
+>name or id in view is wrong (checking)
+>create.js extract wrong value
+>Classes/Request::old is not correct

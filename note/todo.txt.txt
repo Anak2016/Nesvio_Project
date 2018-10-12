@@ -1,6 +1,71 @@
 Todo
 :set up localhost
 :change Server name
-:seperate branch to dev, test, production
+:seperate branch to dev, test, productio
+
+:understand ValidateReques
+	>what is structure of $_POST?
+	>which design is in used? 
+:understand pagination
+	>how do i used the plugin?
+
+:understand eloquent
+	>understand the differences/exceptions of using raw query vs eloqunt query.
+
+:understand autoloader
+
+:understand sequence of create,edit,delete category
+
+After finish projects
+	:both of us must review code and describe it to each other
+		>make legit plan on how to explain the code
+		>create sequence diagram, uml diagram, state diagram
+	:check for all new release version, upgrade them all, make them compatible
+
+	:allow change name (when nesccessary) only after the diagram of work flow is proposed, checked, and verify
+		>product/categories should be changed to products/categories
 
 ============================================================
+todo
+note: since every page of I suspect that there is something wrong with foundation version
+
+:Fix OrderDetail and Order to make it more efficient.
+
+:create link to Categories/subcateogories, so when is clicked will move to subcategories page
+	>in User
+
+:create Users/ Order/ Payment pages
+	>in Admin Panel
+
+:add null index to deleted_at; 
+	>in orders table
+
+:after clikc payment using test card, following error appears
+	>inner-687d7504f00674…27a085599227c9.js:6 Uncaught Error: Minified React error #44; visit http://facebook.github.io/react/docs/error-decoder.html?invariant=44 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+:figure out how where StripeCheckout come from?
+
+:implement one click pay
+
+:if user is not login, he/she can still user CartItem.
+	>create system to support the requirement
+:find software/ways to create id/bar code for products
+
+:make it compatible with google spreadsheet, google shop, google doc. 
+
+:tell Fed size limit of images to be displayed on each pages.
+
+:Tell Sam to discuss about class name/id and how to code using those class name/id structure.
+
+:move code from development environment to testing environment to production environment
+
+:destroy session after error message is displayed.
+
+:when error occurs in admin/products/id/edit, display name of prodcut category instead of caterogy's id.
+	>also redirect it to the correct page. 
+
+:prevent people from typing space in price input 
+	>use jQuery to class "price"
+
+:prevent people from setting subcategory's delete_at to null when category_id is already deleted.
+
+:if we set category's delete_at to null, should sub-category that has category_id == id be changed to null too?

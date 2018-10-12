@@ -1,10 +1,30 @@
-
-
+QUESTION
+What is Rewrite engine?
+Ans	>Rewrite engine is a software componenet that perfomrs rewirtting on Uniform Resource locator, modifing thier appearance
+	>it is a way of implementing URL mapping or routing within a web application.
+	note:The modifcation is called "URL rewriting"
+====================================================================================
 Other
 :in brower.json, jqury is not specify (its ~2.2 in the tutorial)
 
+====================================================================================
 external dependency
 -node
 -npm
 -composer
 -git for window10: https://gitforwindows.org/
+
+warning
+-foundation thats works with js is 6.5.0-rc.3, but bower install foundation 6.3.1 and npm install foundation ^4.2.1-1
+	note: I will most likely have to put 6.5.0 version inside public/js/all.js, but I have to download the correct version 
+		on my local computer then use gulp to collect js files in order.
+=========================================================================================
+Installers
+:bower, composer, npm. 
+
+bower
+	>bower.json
+composer
+	>composer.json
+npm
+	>package.json

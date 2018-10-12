@@ -13,8 +13,8 @@ elixir(function(mix){
 		[
 			'css/app.css',
 			'bower/vendor/slick-carousel/slick/slick.css'
-		],'public/css/all.css',
-		'resources/assets');
+		],'public/css/all.css', //output dir 
+		'resources/assets'); // set base dir to resources/assets for mix.scripts
 	var bowerPath = 'bower/vendor';
 	mix.scripts(
 		[
@@ -25,9 +25,17 @@ elixir(function(mix){
 			bowerPath + 'foundation-sites/dist/js/foundation.min.js',
 
 			//other dependencies
-			bowerPath + '/slick-carousel/slick/slick.min.js'
-		],'public/js/all.js',
-		'resources/assets');
+			bowerPath + '/slick-carousel/slick/slick.min.js',
+			bowerPath + '/chart.js/dist/Chart.bundle.js',
+			bowerPath + '/axios/dist/axios.min.js',
+
+			'js/acme.js',
+			'js/admin/*.js',
+			'js/pages/*.js',
+			'js/init.js'
+
+		],'public/js/all.js', //output dir
+		'resources/assets'); // set base dir to resources/assets for mix.scripts
 
 
 });
