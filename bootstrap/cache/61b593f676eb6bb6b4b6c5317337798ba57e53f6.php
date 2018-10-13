@@ -4,6 +4,8 @@
 	<title>Admin Panel - <?php echo $__env->yieldContent('title'); ?></title>
 	<!-- root directory is at ecommerce/public-->
 	<link rel ="stylesheet" href ="/css/all.css">
+	
+	<<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="https://use.fontawesome.com/8145f993ac.js"></script>
 
 	

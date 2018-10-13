@@ -29,6 +29,21 @@ After finish projects
 todo
 note: since every page of I suspect that there is something wrong with foundation version
 
+:model database
+	>add one to many to Product and Subcategories
+:do research on how other start up scale their website over time
+	>what techonology do they use?
+
+:add coupon option (low priority) 
+
+:allow user to comment on the product.
+
+:create add to List
+
+:create sidebar to set options criteria.
+
+:create browsing history
+
 :Fix OrderDetail and Order to make it more efficient.
 
 :create link to Categories/subcateogories, so when is clicked will move to subcategories page

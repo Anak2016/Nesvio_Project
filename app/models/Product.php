@@ -33,7 +33,7 @@ class Product extends Model
 			foreach($data as $item){
 				$added = new Carbon($item->created_at);
 
-			//push elements onto the end of array.
+				//push elements onto the end of array.
 			//in this case each element of the array is array
 				array_push($products, [
 					'id' => $item->id,
@@ -44,7 +44,8 @@ class Product extends Model
 					'category_id' => $item->category_id,
 					'category_name' => Category::where('id', $item->category_id)->first()->name,
 					'sub_category_id' => $item->sub_category_id,
-					'sub_category_name' => SubCategory::where('id', $item->sub_category_id)->first()->name,
+					'sub_category_name' => SubCategory::where('id', $item->sub_category_id)->first()['name'], // I dont know wtf I did but this shit jsut magically turned to array.
+					// 'sub_category_name' => SubCategory::where('id', $item->sub_category_id)->first()->name,
 					'image_path' => $item->image_path,	
 					'added' => $added->toFormattedDateString(),
 				]);

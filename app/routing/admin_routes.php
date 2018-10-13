@@ -35,5 +35,8 @@ $router->map( 'POST', '/admin/products/edit', 'App\Controllers\Admin\ProductCont
 $router->map( 'POST', '/admin/product/[i:id]/delete', 'App\Controllers\Admin\ProductController@delete', 'delete_product' );
 
 
+//users
+$router->map( 'GET', '/admin/users', 'App\Controllers\Admin\UserController@show', 'edit_user' );
+
 
 ?>

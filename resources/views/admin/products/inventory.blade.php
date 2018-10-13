@@ -25,7 +25,7 @@
 			<table class="hover unstriped" data-form="deleteForm">
 				<thead>
 					<tr><th>Image</th><th>Name</th><th>Price</th>
-						<th>Quantity</th><th>Quantity</th><th>Subcategory</th>
+						<th>Quantity</th><th>Category</th><th>Subcategory</th>
 						<th>Date Created</th><th width="70">Action</th>
 					</thead>
 					<tbody>
@@ -40,6 +40,7 @@
 							<td>{{$product['quantity']}}</td>
 							<td>{{$product['category_name']}}</td>
 							<td>{{$product['sub_category_name']}}</td>
+
 							{{-- Eloquent return date as carbon object so it can call carbon obj's method--}}
 							<td>{{$product['added']}}</td>
 

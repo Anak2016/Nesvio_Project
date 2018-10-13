@@ -2,7 +2,7 @@
 <?php $__env->startSection('data-page-id', 'adminProduct'); ?>
 <?php $__env->startSection('content'); ?>
 <div class="add-product">
-	<div clss ="row expanded">
+	<div clss ="grid-x">
 		<div class="column medium-11">
 			<h2>Add Inventory Item</h2> <hr />
 		</div>
@@ -13,22 +13,22 @@
 	
 	<form method="post" action="/admin/products/create" enctype="multipart/form-data">
 		<div class="small-12 medium-11">
-			<div class="row expanded">
-				<div class="row expanded">
-					<div class="small-12 medium-6 column">
+			<div class="grid-x">
+				<div class="grid-x grid-margin-x grid-margin-y">
+					<div class="small-12 medium-6 cell">
 						<label>Product name:
 							<input type="text" name="name" placeholder="Product name" 
 							value="<?php echo e(\App\Classes\Request::old('post', 'name')); ?>">
 						</label>
 					</div>
-					<div class="small-12 medium-6 column">
+					<div class="small-12 medium-6 cell">
 						<label>Product price:
 							<input type="text" name="price" placeholder="Product's Price" 
 							value="<?php echo e(\App\Classes\Request::old('post', 'price')); ?>">
 						</label>
 					</div>
 
-					<div class="small-12 medium-6 column">
+					<div class="small-12 medium-6 cell">
 						<label>Product Category:
 							<select name="category" id="product-category">
 								<option value="<?php echo e(\App\Classes\Request::old('post', 'category')?:""); ?>">
@@ -42,7 +42,7 @@
 						</label>
 
 					</div>
-					<div class="small-12 medium-6 column">
+					<div class="small-12 medium-6 cell">
 						<label>Product Subcategory:
 							<select name="subcategory" id="product-subcategory">
 								<option value="<?php echo e(\App\Classes\Request::old('post', 'subcategory')?:""); ?>">
@@ -53,7 +53,7 @@
 						</label>
 					</div>
 
-					<div class="small-12 medium-6 column">
+					<div class="small-12 medium-6 cell">
 						<label>Product Quantity:
 							<select name="quantity">
 								<option value="<?php echo e(\App\Classes\Request::old('post', 'quantity')?:""); ?>">
@@ -67,7 +67,7 @@
 						</label>
 
 					</div>
-					<div class="small-12 medium-6 column">
+					<div class="small-12 medium-6 cell">
 						<br />
 						<div class="input-group">
 							<span class="input-group-label">Product Image:</span>
@@ -75,7 +75,7 @@
 						</div>
 					</div>
 					
-					<div class="small-12 column">
+					<div class="small-12 cell">
 						<label>Description:
 							<textarea name="description" placeholder="Description"><?php echo e(\App\Classes\Request::old('post', 'description')); ?></textarea>
 						</label>

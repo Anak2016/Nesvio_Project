@@ -23,7 +23,7 @@
 			<table class="hover unstriped" data-form="deleteForm">
 				<thead>
 					<tr><th>Image</th><th>Name</th><th>Price</th>
-						<th>Quantity</th><th>Quantity</th><th>Subcategory</th>
+						<th>Quantity</th><th>Category</th><th>Subcategory</th>
 						<th>Date Created</th><th width="70">Action</th>
 					</thead>
 					<tbody>
@@ -38,6 +38,7 @@
 							<td><?php echo e($product['quantity']); ?></td>
 							<td><?php echo e($product['category_name']); ?></td>
 							<td><?php echo e($product['sub_category_name']); ?></td>
+
 							
 							<td><?php echo e($product['added']); ?></td>
 

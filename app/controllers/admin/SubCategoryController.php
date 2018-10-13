@@ -6,7 +6,7 @@ use App\Classes\Request;
 use App\Classes\ValidateRequest;
 use App\Classes\Session;
 use App\Classes\Redirect;
-use App\Models\Role;
+use App\Classes\Role;
 
 use App\Controllers\BaseController;
 
@@ -129,7 +129,7 @@ class SubCategoryController extends BaseController
 		if(Request::has('post')){
 			$request = Request::get('post');
 			// var_dump($request); exit;
-			if(CSRFToken::verfityCSRFToken($request->token, false)){
+			if(CSRFToken::verifyCSRFToken($request->token, false)){
 
 				//update record if ture
 				SubCategory::destroy($id);

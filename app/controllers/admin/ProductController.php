@@ -71,8 +71,7 @@ class ProductController extends BaseController
 		if(Request::has('post')){
 			$request = Request::get('post'); //nothing is returned.
 			
-
-			if(CSRFToken::verfityCSRFToken($request->token)){
+			if(CSRFToken::verifyCSRFToken($request->token)){
 				$rules =[
 					'name' => ['required' => true, 'minLength' => 3, 'maxLength' => 70, 'string' =>true, 'unique'=> $this->table_name],
 					'price' => ['required' => true, 'minLength' => 2, 'number'=> true],
@@ -136,7 +135,7 @@ class ProductController extends BaseController
 		if(Request::has('post')){
 			$request = Request::get('post'); //nothing is returned.
 
-			if(CSRFToken::verfityCSRFToken($request->token)){
+			if(CSRFToken::verifyCSRFToken($request->token)){
 				$rules =[
 					'name' => ['required' => true, 'minLength' => 3, 'maxLength' => 70, 'string' =>true],
 					'price' => ['required' => true, 'minLength' => 2, 'number'=> true],

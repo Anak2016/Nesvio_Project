@@ -3,9 +3,7 @@
 // @import url("https://fonts.googleapis.com/css?family=Raleway:300, 400, 600");
 @import url("https://fonts.googleapis.com/css?family=Fjalla+One|Average");
 
-@import "../bower/vendor/foundation-sites/assets/foundation";
-
-@import "../bower/vendor/motion-ui/src/motion-ui";
+@import "~foundation-sites/assets/foundation";
 
 @import "_global";
 @import "admin/_nav";
@@ -16,5 +14,8 @@
 @import "pages/_auth";
 @import "pages/_cart";
 
+@import "~motion-ui/src/motion-ui";
 @include motion-ui-transitions
 @include motion-ui-animations
+
+@import "~slick-carousel/slick/slick.css";
