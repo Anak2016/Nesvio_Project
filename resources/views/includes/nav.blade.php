@@ -18,7 +18,7 @@
 
 				{{-- hidden when small --}}
 				<div class="top-bar-title show-for-medium">
-					<a href="/" class="logo">Nesvio Store</a>
+					<a href="/" class="logo">Nesvio Store</a>	
 				</div>
 
 				<div class="top-bar-left">
@@ -26,7 +26,7 @@
 						<li><a href="#">Nesvio Products</a></li>
 							@if(count($categories))
 								<li>
-									<a href="#">Categories</a>
+									<a href="/categories">Categories</a>
 									<ul class='menu vertical sub dropdown' style="list-style: none;">
 										@foreach($categories as $category)
 											<li>
@@ -35,7 +35,9 @@
 													<ul class="menu sub vertical" style="list-style: none;">
 														@foreach($category->subCategories as $subCategory)
 															<li>
-																<a href="#">
+																{{-- link it to product.blade.php --}}
+																{{-- <a href="/product/{{$subCategory->}}"> --}}
+																	<a href="/subcategory/{{$subCategory->id}}"></a>
 																	{{$subCategory->name}}
 																</a>
 															</li>
@@ -59,6 +61,7 @@
 									Cart &nbsp; <i class="fa fa-shopping-cart" aria-hidden="true"></i>
 								</a>
 							<li>
+							<li><a href="#">Orders</a></li>
 							<li><a href="/logout">Logout</a><li>
 						@else
 							<li><a href="/login">Sign In</a></li>
@@ -86,24 +89,24 @@
 
 			{{-- hidden when small --}}
 			<div class="top-bar-title show-for-medium">
-				<a href="/" class="logo">Acme Store</a>
+				<a href="/" class="logo">Ei-Shop</a>
 			</div>
 
 			<div class="top-bar-left">
 				<ul class="dropdown menu vertical medium-horizontal">
-					<li>Acme Products</li>
+					<li>Products</li>
 					@if(count($categories))
 						<li>
-							<a href="#">Categories</a>
+							<a href="/categories">Categories</a>
 							<ul class='menu vertical sub dropdown' style="list-style: none;">
 								@foreach($categories as $category)
 									<li>
-										<a href="#">{{$category->name}}</a>
+										<a href="/category/{{$category->id}}">{{$category->name}}</a>
 										@if(count($category->subCategories))
 											<ul class="menu sub vertical" style="list-style: none;">
 												@foreach($category->subCategories as $subCategory)
 													<li>
-														<a href="#">
+														<a href="/subcategory/{{$subCategory->id}}">
 															{{$subCategory->name}}
 														</a>
 													</li>
@@ -126,6 +129,7 @@
 								Cart &nbsp; <i class="fa fa-shopping-cart" aria-hidden="true"></i>
 							</a>
 						<li>
+						<li><a href="#">Orders</a></li>
 						<li><a href="/logout">Logout</a><li>
 					@else
 						<li><a href="/login">Sign In</a></li>

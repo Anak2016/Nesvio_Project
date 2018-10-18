@@ -66,6 +66,7 @@ function paginate($num_of_records, $total_record, $table_name, $object)
 	// eloquent query use SoftDelete on deleted_at.
 	//here we use raw query we must specify that deleted_at is null
 	$data = Capsule::select("SELECT *FROM $table_name WHERE deleted_at is null ORDER BY created_at DESC".$pages->get_limit());
+	//transform data from object to array 
 	$categories = $object->transform($data);
 
 	return [$categories, $pages->page_links()];

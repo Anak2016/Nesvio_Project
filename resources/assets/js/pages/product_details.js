@@ -32,7 +32,7 @@
 					// console.log(id);
 					ACMESTORE.module.addItemToCart(id, function(message){
 						$(".notify").css("display", "block").delay(4000).slideUp(300)
-							.html(message);
+						.html(message);
 					});
 				}
 			},

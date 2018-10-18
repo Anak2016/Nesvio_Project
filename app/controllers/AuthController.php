@@ -13,7 +13,7 @@ use App\Models\User;
 class AuthController extends BaseController
 {
 	public function __construct()
-	{
+	{	
 		if(isAuthenticated()){
 			Redirect::to('/');
 		}

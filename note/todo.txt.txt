@@ -29,6 +29,9 @@ After finish projects
 todo
 note: since every page of I suspect that there is something wrong with foundation version
 
+:check compatibility of cPanel and the project
+	>how to set dependency in cPanel
+:export database from localhost/phpmyadmin to godaddy/phpmyadmin
 :model database
 	>add one to many to Product and Subcategories
 :do research on how other start up scale their website over time

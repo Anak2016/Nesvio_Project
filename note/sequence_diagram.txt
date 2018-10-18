@@ -1,0 +1,27 @@
+username 
+full name
+email
+password
+address
+role 
+
+submit with form
+>Json file will use name of input block as key which hold its value
+	:view(click submit button) -> route(post) -> Controller (here submit to database)
+
+ProductCategory submit edit modal (submit with javascript)
+>using ajax to send request, data need to be converted into Json file first before request is sent to target url
+	>using ajax is more flexible because you select data to be sent (selected data must be inbetween the form). (with the cost of manually parse data to JSON)
+	>using axios.js(with vue.js), data will automatically convert to json file. (an advantage over ajax)
+
+	:clikc submit edit modal -> js (admin.update) -> send JSON file to url-> route(post) -> ProductCategoryController::edit 
+
+axios vs ajax:
+	>both can be used in subtitution. 
+	>axios build on top of ajax.
+	>axios and ajax is doing the same thing, but axios is better.
+
+vue.js 
+	>reduce amount of dubplicate code.
+	>it allow html block to choose what method to be used while valina js must specify html block then apply functionality (its bad when 2 html block use the same code (duplicate code))
+

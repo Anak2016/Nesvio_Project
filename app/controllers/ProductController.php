@@ -5,15 +5,16 @@ use App\Models\Product;
 use App\Classes\CSRFToken;
 use App\Classes\Request;
 use App\Classes\Role;
+use App\Classes\Redirect;
 // use App\Classes\Mail;
 
 class ProductController extends BaseController
 {
 	public function __construct()
 	{		
-		if(!Role::middleware('admin')){
-			Redirect::to('/login');
-		}
+		// if(!Role::middleware('user')){
+		// 	Redirect::to('/login');
+		// }
 	}
 	public function show($id)
 	{

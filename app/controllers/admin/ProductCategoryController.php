@@ -90,6 +90,7 @@ class ProductCategoryController extends BaseController
 		return null;
 	}
 
+	//I messed this one up by accident, come back and fix it
 	public function edit($id)
 	{
 		if(Request::has('post')){
@@ -97,29 +98,10 @@ class ProductCategoryController extends BaseController
 			// var_dump($request);
 			// exit;
 			if(CSRFToken::verfityCSRFToken($request->token, false)){
-				$rules =[
-					'name' => ['required' => true, 'minLength' => 3, 'string' =>true, 'unique'=> 'categories']
-					// 'name' => ['required' => true, 'maxLength' => 5, 'unique'=> 'categories']
-				];
-				// var_dump($_POST); exit;
-				// var_dump($rules); exit;
-				$validate = new ValidateRequest;
-				$validate->abide($_POST, $rules);
-
-				if($validate->hasError())
-				{
-					// $error = var_dump($validate->getErrorMessages());
-					$errors = $validate->getErrorMessages(); 
-					header('HTTP/1.1 422 Unprocessable Entity', true , 422);
-					echo json_encode($errors);
-					exit;	
-				}
-
 				//update record if ture
-				Category::where('id',$id)->update(['name'=> $request->name]);
+				User::where('id',$id)->update(['role'=> $request->role]);
 				echo json_encode(['success'=> 'Record Update Successfully']);
 				exit;
-
 			}
 			throw new \Exception('Token mismatch');
 		}

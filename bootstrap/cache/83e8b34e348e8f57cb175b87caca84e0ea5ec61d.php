@@ -1,4 +1,4 @@
-<?php $__env->startSection('title', 'Homewpage'); ?>
+<?php $__env->startSection('title', 'Homepage'); ?>
 <?php $__env->startSection('data-page-id', 'home'); ?>
 
 <?php $__env->startSection('content'); ?>

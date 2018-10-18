@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Homewpage')
+@section('title', 'Homepage')
 @section('data-page-id', 'home')
 
 @section('content')

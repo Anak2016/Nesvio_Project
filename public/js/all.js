@@ -11338,7 +11338,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(11);
-module.exports = __webpack_require__(49);
+module.exports = __webpack_require__(50);
 
 
 /***/ }),
@@ -11369,6 +11369,7 @@ __webpack_require__(45);
 __webpack_require__(46);
 __webpack_require__(47);
 __webpack_require__(48);
+__webpack_require__(49);
 
 /***/ }),
 /* 12 */
@@ -42447,7 +42448,9 @@ module.exports = function(Chart) {
 
 		homeslider: {},
 
-		product: {}
+		product: {},
+
+		groupby: {}
 	};
 })();
 
@@ -42636,10 +42639,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				url: '/admin/product/categories/' + id + '/edit',
 				data: { token: token, name: name },
 				success: function success(data) {
-					console.log(data);
+					// console.log(data);
 					var response = jQuery.parseJSON(data);
-					console.log(typeof data === 'undefined' ? 'undefined' : _typeof(data)); //string
-					console.log(typeof response === 'undefined' ? 'undefined' : _typeof(response)); //object
+					// console.log(typeof(data));//string
+					// console.log(typeof(response));//object
 					$(".notification").css("display", "block").removeClass('primary').addClass('success').delay(4000).slideUp(300).html(response.success);
 				},
 				error: function error(request, _error) {
@@ -42676,9 +42679,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				category_id = selected_category_id;
 			}
 
-			console.log(category_id);
-			console.log(selected_category_id);
-			console.log(name);
+			// console.log(category_id);
+			// console.log(selected_category_id);
+			// console.log(name);
 
 			$.ajax({
 				type: 'POST',
@@ -42820,6 +42823,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	'use strict';
 
 	ACMESTORE.homeslider.homePageProducts = function () {
+		console.log("before runing Vue");
 		var app = new Vue({
 			el: '#root',
 			data: {
@@ -42861,7 +42865,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				}
 			},
 			created: function created() {
-				//what will happen after Vue instance has been created (think of it as constructor)
+				// console.log("before runing Vue");
 				console.log("first");
 				this.getFeaturedProducts();
 			},
@@ -42986,6 +42990,66 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 /* 48 */
 /***/ (function(module, exports) {
 
+(function () {
+	'use strict';
+
+	ACMESTORE.groupby.subCategory = function () {
+		// console.log($('#subcategoryProduct').data('id'));
+		var app = new Vue({
+			el: '#root',
+			data: {
+				products: [],
+				count: 0,
+				total: 0,
+				subCategoryId: $('#subcategoryProduct').data('id'),
+				// subCategoryId: 35,
+				loading: false
+			},
+			methods: { // all of the function must be inside of the object is passed to method property's of Vue.js.
+				getSubcategoryProducts: function getSubcategoryProducts() {
+					this.loading = true;
+
+					axios.get('/subcategory-products/' + this.subCategoryId).then(function (response) {
+						app.products = response.data.products;
+						app.total = response.data.total;
+						app.loading = false;
+						console.log(app.products.length);
+						console.log(app.total);
+					});
+				},
+				stringLimit: function stringLimit(string, value) {
+					ACMESTORE.module.truncateString(string, value);
+				},
+				addToCart: function addToCart(id) {
+					ACMESTORE.module.addItemToCart(id, function (message) {
+						$(".notify").css("display", "block").delay(4000).slideUp(300).html(message);
+					});
+				},
+				loadMoreSubcategoryProducts: function loadMoreSubcategoryProducts() {
+					var token = $('.display-products').data('token');
+					this.loading = true;
+					// we use jQuery here becuase axios pass all javascript object to JSON 
+					//but php scripts only understand encoded format which can be done by using jQuery
+					var data = $.param({ next: 2, token: token, count: app.count });
+					axios.post('/load-more-subcategory', data).then(function (response) {
+						app.products = response.data.products;
+						app.count = response.data.count;
+						app.loading = false;
+					});
+				}
+			},
+			created: function created() {
+				// console.log("first");
+				this.getSubcategoryProducts();
+			}
+		});
+	};
+})();
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports) {
+
 // (function(){
 // 	'use strict'; //enable strict mode which reports error when its occured in our script.
 
@@ -43008,10 +43072,19 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			case 'product':
 				ACMESTORE.product.details();
 				break;
+			case "groupby":
+				ACMESTORE.groupby.subCategory();
+				// ACMESTORE.homeslider.homePageProducts();
+				// ACMESTORE.groupping.Category();
+				break;
 			case 'cart':
 				ACMESTORE.product.cart();
 				break;
 			case 'adminProduct':
+				ACMESTORE.admin.changeEvent();
+				ACMESTORE.admin.delete();
+				break;
+			case 'adminUser':
 				ACMESTORE.admin.changeEvent();
 				ACMESTORE.admin.delete();
 				break;
@@ -43022,7 +43095,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				ACMESTORE.admin.update();
 				ACMESTORE.admin.delete();
 				ACMESTORE.admin.create();
-
 				break;
 			default:
 			//do nothing
@@ -43031,7 +43103,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 })();
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

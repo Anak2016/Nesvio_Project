@@ -14,10 +14,10 @@
 				url: '/admin/product/categories/' + id + '/edit',
 				data: {token:token, name:name},
 				success: function(data){
-					console.log(data);
+					// console.log(data);
 					var response = jQuery.parseJSON(data);
-					console.log(typeof(data));//string
-					console.log(typeof(response));//object
+					// console.log(typeof(data));//string
+					// console.log(typeof(response));//object
 					$(".notification").css("display", "block").removeClass('primary').addClass('success').delay(4000).slideUp(300).html(response.success)
 				},
 				error: function(request, error){
@@ -55,9 +55,9 @@
 				category_id = selected_category_id;
 			}
 
-			console.log(category_id);
-			console.log(selected_category_id);
-			console.log(name);
+			// console.log(category_id);
+			// console.log(selected_category_id);
+			// console.log(name);
 
 			$.ajax({
 				type: 'POST',

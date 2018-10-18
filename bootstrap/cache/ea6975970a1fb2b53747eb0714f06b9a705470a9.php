@@ -9,7 +9,8 @@
 			<div class="small-12 medium-7 medium-centered">
 				<h2 class="text-center">Create Account</h2>
 				<?php echo $__env->make('includes.message', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-				<form action="/register" method="post">
+
+				<form action="/admin/users/create" method="post">
 					<input type="text" name="fullname" placeholder="Your name"
 						value="<?php echo e(\App\Classes\Request::old('post', 'fullname')); ?>">
 
@@ -24,6 +25,7 @@
 					<input type="hidden" name="token" value="<?php echo e(\App\Classes\CSRFToken::_token()); ?>">
 					<button class="button float-right">Register</button>
 				</form>
+
 				<p>Already Registered? <a href="/login">Login Here</a></p>
 			</div>
 		</div>

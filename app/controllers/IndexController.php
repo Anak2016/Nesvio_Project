@@ -28,6 +28,15 @@ class IndexController extends BaseController
 		echo json_encode(['products' => $products]);
 	}
 
+	public function subcategoryProducts($id)
+	{
+		$products = Product::where('sub_category_id', $id)->inRandomOrder()->limit(4)->get();
+		//want to coutn all product that has sub_category_id = $id
+		$total = Product::where('sub_category_id', $id)->count();//wrongly use of all()
+		// var_dump($total); exit;	
+		echo json_encode(['products' => $products, 'count' =>count($products), 'total'=> $total]);
+	}
+
 	public function loadMoreProducts()
 	{
 		$request = Request::get('post');
@@ -36,6 +45,17 @@ class IndexController extends BaseController
 			$count = $request->count;
 			$item_per_page = $count +$request->next;
 			$products = Product::where('featured', 0)->skip(0)->take($item_per_page)->get();
+			echo json_encode(['products'=> $products, 'count' =>count($products)]);
+		}
+	}
+	public function loadMoreSubcategoryProducts()
+	{
+		$request = Request::get('post');
+
+		if(CSRFToken::verifyCSRFToken($request->token, false)){
+			$count = $request->count;
+			$item_per_page = $count +$request->next;
+			$products = Product::where('sub_category_id', $id)->skip(0)->take($item_per_page)->get();
 			echo json_encode(['products'=> $products, 'count' =>count($products)]);
 		}
 	}

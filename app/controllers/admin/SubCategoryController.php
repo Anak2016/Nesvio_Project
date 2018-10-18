@@ -12,7 +12,7 @@ use App\Controllers\BaseController;
 
 use App\Models\SubCategory;
 use App\Models\Category;
-
+use App\Models\Product;
 
 class SubCategoryController extends BaseController
 {
@@ -22,6 +22,15 @@ class SubCategoryController extends BaseController
 			Redirect::to('/login');
 		}
 	}
+
+	public function show($id)
+	{
+		$token = CSRFToken::_token();
+		$subCategory = SubCategory::where('id', $id)->first();
+		// var_dump($subCategory->name); exit;
+		return view('admin/groupby/subcategory', compact('token', 'subCategory'));
+	}
+
 	//store 
 	public function store()
 	{

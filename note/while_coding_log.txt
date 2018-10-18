@@ -1,0 +1,57 @@
+what could go wrong log
+
+/home/wgdfgdd534k2/public_html/dev_anank/ecommerce/vendor/composer/autoload_real.php
+
+pear vs composer vs apt
+
+nvm cant be install
+	>head detached problem
+
+try switching from using altorouter ot just basic Laravel routing
+	>watch udemy video and see if there is change in setting away from the basic
+	>create new route -> make it work -> edit new route on godaddy server
+
+call go-daddy
+	>(480) 505-8877
+
+
+================================================
+to do
+
+:merge front end and back end
+	>find differences of orm and pdo then convert to one type or find way to work together
+	>differences
+		>bootstrap vs foundation
+			>>bootstrap
+		>orm vs pdo
+			>>
+		>mvc vs precedure
+			>>mvc
+		>dependencies differences
+			>>
+
+:add created date and link
+	>what is model::transform for?
+	>what is relationsiop of product and order? hasone or belong to
+
+:allow user to change order, and see orders' history
+:move category and subcategory out of admin folder
+	>where to change
+		>>view, controller, route
+>include paypal
+>do admin/dashbord page
+>do admin/View Orders 
+	>include refund
+	>if refund, send announment email to user's email
+
+>do admin/Payment	
+	>show all payment including refund
+		>>insert refund column in payment database
+	>add search bars which can search for user/order#/date/and so on 
+
+>User can choose to cancle order
+
+:do loading on subcategory_product/id page
+
+:click category in navbar and show all category and its category
+	>similar to amazon

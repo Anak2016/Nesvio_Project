@@ -14,5 +14,4 @@ $router->map( 'POST', '/cart/empty-cart', 'App\Controllers\CartController@emptyI
 
 $router->map( 'POST', '/cart/payment', 'App\Controllers\CartController@checkout', 'handle_payment' );
 
-
 ?>

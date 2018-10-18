@@ -1,5 +1,4 @@
-<?php
-namespace App\Controllers\Admin;
+<?php namespace App\Controllers\Admin;
 
 use App\Classes\CSRFToken;
 use App\Models\Category;

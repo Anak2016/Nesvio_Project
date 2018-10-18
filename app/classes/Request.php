@@ -33,6 +33,7 @@ class Request
 
 	//Already existed data in JSON format
 	//(called 'old' because data is already exist hence 'old')
+	//another word, it represent newly added input data. if not set return empty, if set return input value.
 	public static function old($key, $value)
 	{
 		$object = new static;

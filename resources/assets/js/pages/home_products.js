@@ -2,6 +2,7 @@
 	'use strict';
 
 	ACMESTORE.homeslider.homePageProducts = function(){
+		console.log("before runing Vue");
 		var app = new Vue({
 			el:'#root',
 			data: {
@@ -31,7 +32,7 @@
 				addToCart: function(id){
 					ACMESTORE.module.addItemToCart(id, function(message){
 						$(".notify").css("display", "block").delay(4000).slideUp(300)
-							.html(message);
+						.html(message);
 					});
 				},
 				loadMoreProducts: function(){
@@ -48,7 +49,8 @@
 					});
 				}
 			},
-			created: function(){ //what will happen after Vue instance has been created (think of it as constructor)
+			created: function(){
+				// console.log("before runing Vue");
 				console.log("first");
 				this.getFeaturedProducts(); 
 			},

@@ -20,10 +20,19 @@
 			case 'product':
 				ACMESTORE.product.details();
 				break;
+			case "groupby":
+				ACMESTORE.groupby.subCategory();
+				// ACMESTORE.homeslider.homePageProducts();
+				// ACMESTORE.groupping.Category();
+				break;
 			case 'cart':
 				ACMESTORE.product.cart();
 				break;
 			case 'adminProduct':
+				ACMESTORE.admin.changeEvent();
+				ACMESTORE.admin.delete();
+				break;
+			case 'adminUser':
 				ACMESTORE.admin.changeEvent();
 				ACMESTORE.admin.delete();
 				break;
@@ -34,7 +43,6 @@
 				ACMESTORE.admin.update();
 				ACMESTORE.admin.delete();
 				ACMESTORE.admin.create();
-
 				break;
 			default:
 				//do nothing

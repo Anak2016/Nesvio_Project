@@ -14,7 +14,7 @@
 
 				
 				<div class="top-bar-title show-for-medium">
-					<a href="/" class="logo">Nesvio Store</a>
+					<a href="/" class="logo">Nesvio Store</a>	
 				</div>
 
 				<div class="top-bar-left">
@@ -22,7 +22,7 @@
 						<li><a href="#">Nesvio Products</a></li>
 							<?php if(count($categories)): ?>
 								<li>
-									<a href="#">Categories</a>
+									<a href="/categories">Categories</a>
 									<ul class='menu vertical sub dropdown' style="list-style: none;">
 										<?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 											<li>
@@ -31,7 +31,9 @@
 													<ul class="menu sub vertical" style="list-style: none;">
 														<?php $__currentLoopData = $category->subCategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $subCategory): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 															<li>
-																<a href="#">
+																
+																
+																	<a href="/subcategory/<?php echo e($subCategory->id); ?>"></a>
 																	<?php echo e($subCategory->name); ?>
 
 																</a>
@@ -56,6 +58,7 @@
 									Cart &nbsp; <i class="fa fa-shopping-cart" aria-hidden="true"></i>
 								</a>
 							<li>
+							<li><a href="#">Orders</a></li>
 							<li><a href="/logout">Logout</a><li>
 						<?php else: ?>
 							<li><a href="/login">Sign In</a></li>
@@ -79,24 +82,24 @@
 
 			
 			<div class="top-bar-title show-for-medium">
-				<a href="/" class="logo">Acme Store</a>
+				<a href="/" class="logo">Ei-Shop</a>
 			</div>
 
 			<div class="top-bar-left">
 				<ul class="dropdown menu vertical medium-horizontal">
-					<li>Acme Products</li>
+					<li>Products</li>
 					<?php if(count($categories)): ?>
 						<li>
-							<a href="#">Categories</a>
+							<a href="/categories">Categories</a>
 							<ul class='menu vertical sub dropdown' style="list-style: none;">
 								<?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 									<li>
-										<a href="#"><?php echo e($category->name); ?></a>
+										<a href="/category/<?php echo e($category->id); ?>"><?php echo e($category->name); ?></a>
 										<?php if(count($category->subCategories)): ?>
 											<ul class="menu sub vertical" style="list-style: none;">
 												<?php $__currentLoopData = $category->subCategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $subCategory): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 													<li>
-														<a href="#">
+														<a href="/subcategory/<?php echo e($subCategory->id); ?>">
 															<?php echo e($subCategory->name); ?>
 
 														</a>
@@ -120,6 +123,7 @@
 								Cart &nbsp; <i class="fa fa-shopping-cart" aria-hidden="true"></i>
 							</a>
 						<li>
+						<li><a href="#">Orders</a></li>
 						<li><a href="/logout">Logout</a><li>
 					<?php else: ?>
 						<li><a href="/login">Sign In</a></li>
